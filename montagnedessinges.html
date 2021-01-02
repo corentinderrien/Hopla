@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/commun.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+</head>
+<style>
+    .containeur {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+
+        position: relative;
+        top: 120px;
+    }
+
+    .containeur div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .texte {
+        margin: 20px;
+    }
+
+    .containeur img {
+        max-width: 100%;
+        width: auto;
+    }
+
+    .containeur h3 {
+        padding: 10px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    }
+
+    .adresse {
+        text-align: center;
+        position: relative;
+        top: 30px;
+        margin: 20px;
+        margin-top: 50px;
+    }
+
+    #mapid {
+        height: 180px;
+        width: 250px;
+        margin-top: 30px;
+        border-radius: 8px;
+        border: solid #b54a4a;
+        z-index: 1;
+    }
+
+    .part2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .comecrire {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        margin: 10px;
+        margin-top: 150px;
+    }
+
+    .comecrire textarea {
+        background: #ddd;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 3%;
+        color: #b54a4a;
+        border: none;
+        resize: none;
+        margin: 5%;
+        font-weight: bold;
+        border: solid #b54a4a;
+        width: 50vw;
+    }
+
+    button {
+        border: none;
+        color: white;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 5px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    }
+
+    .comenvoie {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .comenvoie h3 {
+        padding: 10px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    }
+
+    .commentaire {
+        background: #ddd;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 20px;
+        color: #b54a4a;
+        border: none;
+        resize: none;
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    @media screen and (min-width: 1200px) {
+
+        .containeur {
+            margin: 2%;
+        }
+
+        .containeur div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containeur div div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containeur img {
+            width: 45%;
+        }
+
+        #mapid {
+            height: 280px;
+            width: 350px;
+        }
+    }
+</style>
+
+<body>
+
+    <nav>
+        <ul>
+            <img src="svg/fichier 2.svg" width="100%" height="100px">
+            <li> <a class="underline" href="index.html">Accueil</a> </li>
+            <li> <a class="underline" href="lieux.html">Lieux</a> </li>
+            <li> <a class="underline" href="evenements.html">Evenement</a> </li>
+            <li> <a class="underline" href="contact.html">Contact</a> </li>
+        </ul>
+    </nav>
+
+    <header>
+        <button id="hamburger-button" onclick="menu()">&#9776;</button>
+
+        <a href="index.html" class="headerlogo">
+            <img src="svg/fichier 1.svg" width="100%" height="60px">
+        </a>
+        <div class="menupc">
+            <a class="underline" href="index.html">Accueil</a>
+            <a class="underline" href="lieux.html">Lieux</a>
+            <a class="underline" href="evenements.html">Evenement</a>
+            <a class="underline" href="contact.html">Contact</a>
+        </div>
+    </header>
+
+
+    <div class="containeur">
+        <img src="Images/lieux/montagne_des_singes2_page_montagne_des_singes.jpg" alt="">
+        <div>
+            <div>
+                <h3>
+                    Qu’est ce que la montagne des singes ?
+                </h3>
+                <div class="texte">
+                    La Montagne des singes est un parc animalier situé dans la commune de Kintzheim en Alsace, dans le Bas-Rhin, dans lequel on peut observer plus de 240 singes. <br>
+En visitant ce parc, vous vivrez l’expérience d’une immersion totale dans l’univers fascinant de plus de 200 macaques de Barbarie en liberté dans une forêt de 24 ha. Ces singes vivent habituellement dans les montagnes du Maroc et de l’Algérie et vivent à présent dans ce parc en Alsace, avec un mode de vie qui se rapproche beaucoup de celle qu'ils avaient dans leurs montagnes d'origines. Les visiteurs peuvent ainsi découvrir et observer la façon de vivre des singes. <br>
+<br>
+Les possibilités d’observation et la proximité avec les singes sont exceptionnelles. Vous pourrez même les  nourrir en leur donnant du pop-corn offert à l’entrée ! En famille ou entre amis, petits ou grands, vous vous souviendrez longtemps de cette visite originale.
+                </div>
+
+                <h3>
+                    Des animations 
+                </h3>
+                <div class="texte">
+                    Un jeu de piste familial avec à la clé une récompense pour les plus chanceux et les plus appliqués est proposé aux visiteurs ! Jeu gratuit disponible à l’entrée du parc.
+                </div>
+
+                <h3>
+                    La montagne des singes et la covid-19 ?
+                </h3>
+                <div class="texte">
+                    Un ensemble de mesures sanitaires ont été prises en compte afin de garantir la santé et la sécurité de tous. <br><br>
+Depuis le lundi 20 juillet, et selon le décret, le port du masque est obligatoire sur l'ensemble du site pour les plus de 9 ans (possibilité d’acheter des masques à la caisse) <br><br>
+Les visiteurs doivent également veiller aux gestes barrières : pas de distribution de pop corn,  distanciation sociale, lavage et/ou désinfection des mains fréquemment. <br><br>
+Mise à disposition de gel hydro-alcoolique à différents endroits du parc : caisse, parc, boutique, restauration…
+
+                </div>
+            </div>
+
+            <div>
+                <h3>
+                    Accessibilité
+                </h3>
+                <div class="texte">
+                    > En voiture, en bus de tourisme <br><br>
+                    > En provenance de Strasbourg ou de Mulhouse : A35 sortie n°17 puis suivre direction ‘Haut-Koenigsbourg’ Le parc se situe à environ 5 km de la sortie d’autoroute. <br><br>
+                    >Distance des principales villes environnantes :<br><br>
+                    Strasbourg 60 km<br>
+                    Colmar 25 km<br>
+                    Nancy 130 km<br>
+                    Metz 190 km<br>
+                    Bâle 90 km<br>
+                    Freiburg i. B. 65 km<br><br>
+                    Veillez à ne pas confondre Kintzheim, village où se situe La Montagne des Singes, à hauteur de Sélestat, et Kientzheim, situé à côté de Kaysersberg !
+
+                </div>
+                <div class="adresse">
+                    <div>Adresse :<br> Chemin du Grosswald,<br> 68190 Ungersheim</div>
+                </div>
+                <div id="mapid">
+                    <script>
+                        var mymap = L.map('mapid').setView([47.777838517057155, 7.313387632377312], 13);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(mymap);
+
+                        var MMI = L.icon({
+                            iconUrl: 'https://www.flaticon.com/svg/static/icons/svg/854/854853.svg',
+
+                            iconSize: [30, 30], // size of the icon
+                            shadowSize: [50, 64], // size of the shadow
+                        });
+                        L.marker([47.729799, 7.301740], { icon: MMI }).addTo(mymap);
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="part2">
+        <div class="comecrire">
+            <textarea rows=5 cols=35 placeholder="Votre message"></textarea>
+        </div>
+        <button href="#" class="bouton">Envoyer</button>
+
+        <div class="comenvoie">
+            <h3>Commentaire</h3>
+            <div class="commentaire">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footercontact">
+            <div class="reseaux">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+            </div>
+            <div class="footertexte">
+                hopla@gmail.com <br>
+                61 Rue Albert Camus,<br> 68200 Mulhouse - (<a href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+                    Map</a>)
+            </div>
+        </div>
+        <div class="footer2">
+            <div class="footeradress">2020 © Hopla<br>
+                Tous droits réservés
+            </div>
+            <div class="mention">
+                <a href="mentionslegales.html">Mentions légales</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+<script src="javascript/script.js"></script>
+
+</html>

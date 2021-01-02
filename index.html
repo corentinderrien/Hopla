@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/commun.css">
+    <title>Document</title>
+</head>
+<style>
+    .containeur {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+
+        position: relative;
+        top: 50px;
+    }
+
+    .containeur img {
+        max-width: 100%;
+        width: auto;
+    }
+
+    .containeur div h3 {
+        padding: 10px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 3px;
+    }
+
+
+    .containeur div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .position {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .position a{
+        padding: 10px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 3px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-top: 20px;
+    }
+
+    .texte {
+        margin: 20px;
+        transition: 600ms;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    @media screen and (min-width: 1200px) {
+
+        .containeur {
+            margin: 2%;
+            margin-top: 100px;
+        }
+
+        .containeur div {
+            display: flex;
+            flex-direction: initial;
+            align-items: center;
+            justify-content: center;
+            margin: 1%;
+
+            animation: anim1 2s ease-out;
+        }
+
+        .containeur div div {
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-items: center;
+            
+            margin-right: 20%;
+            align-items: center;
+            justify-content: center;
+            animation: anim1 2s ease-out;
+            margin-top: 45px;
+        }
+
+        .imgprincipale:hover{
+            color: white;
+            opacity: 50%;
+            transition: 2s ease-in-out;
+        }
+
+        .containeur img {
+            width: auto;
+            height: 80vh;
+
+            animation: anim1 2s ease-out;
+        }
+
+        .containeur div h3:hover {
+            transform: scale(1.1);
+            transition: 1s ease-in-out;
+            cursor: pointer;
+            color: #b54a4a;
+            background-color: white;
+        }
+
+        .position a:hover {
+            transform: scale(1.1);
+            transition: 1s ease-in-out;
+            cursor: pointer;
+            color: #b54a4a;
+            background-color: white;
+        }
+
+        .texte:hover {
+        background-color:  #212542;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+        @keyframes anim1 {
+        0%{opacity: 0%;transform: translate(0, -10px);}
+        50%{opacity: 50%;transform: translate(0, 10px);}
+        100%{opacity: 100%;}}
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <img src="svg/fichier 2.svg" width="100%" height="100px">
+            <li> <a class="underline" href="index.html">Accueil</a> </li>
+            <li> <a class="underline" href="lieux.html">Lieux</a> </li>
+            <li> <a class="underline" href="evenements.html">Evenement</a> </li>
+            <li> <a class="underline" href="contact.html">Contact</a> </li>
+        </ul>
+    </nav>
+
+    <header>
+        <button id="hamburger-button" onclick="menu()">&#9776;</button>
+
+        <a href="index.html" class="headerlogo">
+            <img src="svg/fichier 1.svg" width="100%" height="60px">
+        </a>
+        <div class="menupc">
+            <a class="underline" href="index.html">Accueil</a>
+            <a class="underline" href="lieux.html">Lieux</a>
+            <a class="underline" href="evenements.html">Evenement</a>
+            <a class="underline" href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <div class="containeur">
+        <img class="imgprincipale" src="Images/lieux/alsace_page_accueil.jpg" alt="">
+        <div class="texte" style="margin-top: 30px; font-size: 20px;">
+            <strong>Vous aimez découvrir de nouveaux lieux,  goûter à de nouvelles saveurs ou enrichir votre culture ?</strong>
+        </div>
+        
+        <div>
+            <div class="position">
+                <div class="texte">
+                    L’Alsace est une destination idéale, car elle regorge d'innombrables lieux à découvrir. <br>
+Originalité, féérie, témoignage du passé ou encore rencontre inoubliable, des lieux insolites qui sortent de l'ordinaire n’attendent qu’à être découvert. <br>
+<br>
+Alors qu’attendez-vous? Explorez ces lieux et repartez avec des souvenirs gravés à jamais ! 
+
+                </div>
+
+                <a href="lieux.html"><strong>Découvrir notre sélection</strong></a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footercontact">
+            <div class="reseaux">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+            </div>
+            <div class="footertexte">
+                hopla@gmail.com <br>
+                61 Rue Albert Camus,<br> 68200 Mulhouse - (<a href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+                    Map</a>)
+            </div>
+        </div>
+        <div class="footer2">
+            <div class="footeradress">2020 © Hopla<br>
+                Tous droits réservés
+            </div>
+            <div class="mention">
+                <a href="mentionslegales.html">Mentions légales</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+<script src="javascript/script.js"></script>
+
+</html>

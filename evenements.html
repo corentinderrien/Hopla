@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/commun.css">
+    <title>Document</title>
+</head>
+<style>
+    .containeur {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        margin: 30px;
+        margin-top: 100px;
+    }
+
+    .grid1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .red{
+        color:#f11036;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .vid {
+        max-width: 100%;
+        width: auto;
+        margin: 20px;
+    }
+
+    .event {
+        margin: 20px;
+    }
+
+    .event img {
+        max-width: 100%;
+        width: auto;
+    }
+
+
+    @media screen and (min-width: 1200px) {
+
+        .grid1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            column-gap: 5%;
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <img src="svg/fichier 2.svg" width="100%" height="100px">
+            <li> <a class="underline" href="index.html">Accueil</a> </li>
+            <li> <a class="underline" href="lieux.html">Lieux</a> </li>
+            <li> <a class="underline" href="evenements.html">Evenement</a> </li>
+            <li> <a class="underline" href="contact.html">Contact</a> </li>
+        </ul>
+    </nav>
+
+    <header>
+        <button id="hamburger-button" onclick="menu()">&#9776;</button>
+
+        <a href="index.html" class="headerlogo">
+            <img src="svg/fichier 1.svg" width="100%" height="60px">
+        </a>
+        <div class="menupc">
+            <a class="underline" href="index.html">Accueil</a>
+            <a class="underline" href="lieux.html">Lieux</a>
+            <a class="underline" href="evenements.html">Evenement</a>
+            <a class="underline" href="contact.html">Contact</a>
+        </div>
+    </header>
+
+
+    <div class="containeur">
+        <div class="grid1">
+            <div>
+                De nombreuses animations sont proposées tout au long de l’année et selon les saisons.
+                Célébrations, rencontres, jeux, quizzs, concours, et bien d’autres ! <br><br>Voici notre
+                sélection d'événements à ne pas louper !
+                <br> <br> <br>
+                <div class="red"> <b> ATTENTION </b><br><br></div>
+                    Suite à l’épidémie de Covid-19 et aux mesures prises par le gouvernement afin de garantir la santé
+                    et la sécurité de tous, les évènements sont annulés durant une période indéterminée.
+                </div>
+            <video class="vid" src="Videos/video_ecomusee.mp4" controls></video>
+
+        </div>
+
+        <div class="grid2">
+            <div class="event">
+                <img src="Images/event/noel_écomusée.png" alt="">
+                <div class="date">20/12/2020</div>
+            </div>
+            <div class="event">
+                <img src="Images/event/mon_univers_event.jpg" alt="">
+                <div class="date">21/09/2020</div>
+            </div>
+            <div class="event">
+                <img src="Images/event/montagnes_des_singes_event.png" alt="">
+                <div class="date">08/02/2021</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footercontact">
+            <div class="reseaux">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+            </div>
+            <div class="footertexte">
+                hopla@gmail.com <br>
+                61 Rue Albert Camus,<br> 68200 Mulhouse - (<a href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+                    Map</a>)
+            </div>
+        </div>
+        <div class="footer2">
+            <div class="footeradress">2020 © Hopla<br>
+                Tous droits réservés
+            </div>
+            <div class="mention">
+                <a href="mentionslegales.html">Mentions légales</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+<script src="javascript/script.js"></script>
+
+</html>

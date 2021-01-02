@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgb(45, 45, 95);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 80px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background-color: rgb(28, 28, 66);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .menupc {
+            display: none;
+        }
+
+        @media screen and (min-width: 1200px) {
+            body {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            header>button,
+            nav>button {
+                display: none;
+            }
+
+            header {
+                width: 100%;
+                height: 90px;
+                background-color: royalblue;
+                position: fixed;
+            }
+
+            .menupc {
+                display: initial;
+                display: flex;
+                justify-content: space-evenly;
+                padding: 20px;
+            }
+        }
+
+        .ouvert {
+            transform: translate(0);
+            background: rgb(34, 21, 107);
+        }
+
+        #hamburger,
+        #hamburger-content {
+            display: inline;
+        }
+
+        #hamburger-button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 30px;
+            padding: 0;
+            vertical-align: top;
+            line-height: 77px;
+            float: right;
+            margin-right: 32px;
+            animation: 1s;
+            color: white;
+        }
+
+        .burger2 {
+            transform: rotate(90°);
+            color: red;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        li:before {
+            content: ' ';
+            display: inline-block;
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+            margin-right: 30px;
+            margin-bottom: 24px;
+            border: 2px solid red;
+        }
+
+        li:first-child:before {
+            background-image: url("home.svg");
+
+        }
+
+        li:nth-child(2):before {
+            background-image: url("lieu.svg");
+        }
+
+        li:nth-child(3):before {
+            background-image: url("forum.svg");
+
+        }
+
+        li:nth-child(4):before {
+            background-image: url("contact.svg");
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Lieux</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <header>
+        <button id="hamburger-button" onclick="menu()">&#9776;</button>
+        <div class="menupc">
+            <a href="#">Accueil</a>
+            <a href="#">Lieux</a>
+            <a href="#">Forum</a>
+            <a href="#">Contact</a>
+        </div>
+    </header>
+
+
+
+
+</body>
+
+<script>
+    function menu() {
+        document.querySelector("nav").classList.toggle("ouvert");
+        document.querySelector("#hamburger-button").classList.toggle("burger2");
+    }
+</script>
+
+
+</html>
