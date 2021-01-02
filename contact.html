@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/commun.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <style>
+       
+        .part1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .enveloppe {
+            height: 80px;
+            margin-top: 30px;
+            transition: 400ms ease-in-out;
+            border-radius: 50%;
+        }
+
+        .enveloppe:hover{
+            transform: scale(1.1);
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        .intro {
+            text-align: center;
+
+            padding: 15px;
+            border-radius: 20px;
+
+        }
+
+        .adresse {
+            text-align: center;
+            position: relative;
+            top: 30px;
+        }
+
+        #mapid {
+            height: 180px;
+            width: 250px;
+            margin-top: 30px;
+            border-radius: 8px;
+            border: solid #b54a4a;
+            z-index: 1;
+
+            transition: 500ms ease-in-out;
+        }
+
+        #mapid:hover {
+            transform: scale(1.1);  
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);   
+        }
+
+
+        .formulaire>input {
+            height: 3em;
+            width: 20em;
+            background-color: lightgrey;
+            color: black;
+
+
+        }
+
+        .formulaire>:nth-child(1) {
+            height: 3em;
+            width: 20em;
+            background-color: lightgrey;
+            border-radius: 10px 10px 0 0;
+
+        }
+
+        .formulaire>:nth-child(9) {
+            width: 20em;
+            background-color: lightgrey;
+            border-radius: 0 0 10px 10px;
+            height: 6em;
+
+        }
+
+        .valider {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            
+        }
+
+        .formulaire>div>:nth-child(1) {
+            border-radius: 8px;
+            background-color: lightgrey;
+
+        }
+
+        .ok{
+            cursor: pointer;
+            padding: 10px;
+            background-color: #b54a4a;
+            
+            border-bottom: rgba(0, 0, 0, 0.5) solid 3px;
+            transition: 500ms ease-in-out;
+        }
+
+        .ok:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            transform: scale(1.05);
+        }
+
+        @media screen and (min-width: 1200px) {
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: initial;
+            }
+
+            .part1 {
+                margin: 10%;
+            }
+
+            .coordonnees {
+                margin: 10%;
+            }
+
+            #mapid {
+                height: 280px;
+                width: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <img src="svg/fichier 2.svg" width="100%" height="100px">
+            <li> <a class="underline" href="index.html">Accueil</a> </li>
+            <li> <a class="underline" href="lieux.html">Lieux</a> </li>
+            <li> <a class="underline" href="evenements.html">Evenement</a> </li>
+            <li> <a class="underline" href="contact.html">Contact</a> </li>
+        </ul>
+    </nav>
+
+    <header>
+        <button id="hamburger-button" onclick="menu()">&#9776;</button>
+
+        <a href="index.html" class="headerlogo">
+            <img src="svg/fichier 1.svg" width="100%" height="60px">
+        </a>
+        <div class="menupc">
+            <a class="underline" href="index.html">Accueil</a>
+            <a class="underline" href="lieux.html">Lieux</a>
+            <a class="underline" href="evenements.html">Evenement</a>
+            <a class="underline" href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="part1">
+            <img class="enveloppe" src="Images/email.png" alt="">
+
+            <h1>Contactez-nous !</h1>
+
+            <div class="intro">Une question ? Une suggestion ? <br>L'équipe de Hopla répondra <br>avec plaisir à votre
+                demande.</div>
+
+            <h3>Formulaire de contact</h3>
+            <div class="formulaire">
+                <input type="text" class="name" placeholder="Votre nom"> <br>
+                <input type="text" class="email" placeholder="Votre mail"> <br>
+                <input type="text" class="numero" placeholder="Votre numéro"> <br>
+                <input type="text" class="objet" placeholder="Objet"> <br>
+                <input type="text" class="msg" placeholder="Votre message"></input> <br>
+                <div class="valider"><button class="ok">Valider</button> </div>
+            </div>
+        </div>
+
+
+        <div class="coordonnees">
+            <div class="adresse">
+                <div>Adresse :<br> 61 Rue Albert Camus,<br> 68200 Mulhouse</div>
+
+            </div>
+            <br>
+            <div id="mapid">
+                <script>
+                    var mymap = L.map('mapid').setView([47.73039799153764, 7.301120582922567], 13);
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(mymap);
+
+                    var MMI = L.icon({
+                        iconUrl: 'https://www.flaticon.com/svg/static/icons/svg/854/854853.svg',
+
+                        iconSize: [30, 30], // size of the icon
+                        shadowSize: [50, 64], // size of the shadow
+                    });
+                    L.marker([47.729799, 7.301740], { icon: MMI }).addTo(mymap);
+
+                </script>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footercontact">
+            <div class="reseaux">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+            </div>
+            <div class="footertexte">
+                hopla@gmail.com <br>
+                61 Rue Albert Camus,<br> 68200 Mulhouse - (<a href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+                    Map</a>)
+            </div>
+        </div>
+        <div class="footer2">
+            <div class="footeradress">2020 © Hopla<br>
+                Tous droits réservés
+            </div>
+            <div class="mention">
+                <a href="mentionslegales.html">Mentions légales</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+</body>
+
+<script src="javascript/script.js"></script>
+
+</html>

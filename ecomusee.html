@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/commun.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+</head>
+<style>
+    .containeur {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+
+        position: relative;
+        top: 120px;
+    }
+
+    .containeur div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .texte {
+        margin: 20px;
+    }
+
+    .containeur img {
+        max-width: 100%;
+        width: auto;
+    }
+
+    .containeur h3 {
+        padding: 10px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    }
+
+    .adresse {
+        text-align: center;
+        position: relative;
+        top: 30px;
+        margin: 20px;
+        margin-top: 50px;
+    }
+
+    #mapid {
+        height: 180px;
+        width: 250px;
+        margin-top: 30px;
+        border-radius: 8px;
+        border: solid #b54a4a;
+        z-index: 1;
+    }
+
+    .part2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .comecrire {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        margin: 10px;
+        margin-top: 150px;
+    }
+
+    .comecrire textarea {
+        background: #ddd;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 3%;
+        color: #b54a4a;
+        border: none;
+        resize: none;
+        margin: 5%;
+        font-weight: bold;
+        border: solid #b54a4a;
+        width: 50vw;
+    }
+
+    button {
+        border: none;
+        color: white;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 5px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    }
+
+    .comenvoie {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+    }
+
+    .comenvoie h3 {
+        padding: 10px;
+        background-color: #b54a4a;
+        border-radius: 10px;
+        border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    }
+
+    .commentaire {
+        background: #ddd;
+        font-size: large;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 20px;
+        color: #b54a4a;
+        border: none;
+        resize: none;
+        margin: 10px;
+        border-radius: 20px;
+    }
+
+    @media screen and (min-width: 1200px) {
+
+        .containeur {
+            margin: 2%;
+        }
+
+        .containeur div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containeur div div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containeur img {
+            width: 45%;
+        }
+
+        #mapid {
+            height: 280px;
+            width: 350px;
+        }
+    }
+</style>
+
+<body>
+
+    <nav>
+        <ul>
+            <img src="svg/fichier 2.svg" width="100%" height="100px">
+            <li> <a class="underline" href="index.html">Accueil</a> </li>
+            <li> <a class="underline" href="lieux.html">Lieux</a> </li>
+            <li> <a class="underline" href="evenements.html">Evenement</a> </li>
+            <li> <a class="underline" href="contact.html">Contact</a> </li>
+        </ul>
+    </nav>
+
+    <header>
+        <button id="hamburger-button" onclick="menu()">&#9776;</button>
+
+        <a href="index.html" class="headerlogo">
+            <img src="svg/fichier 1.svg" width="100%" height="60px">
+        </a>
+        <div class="menupc">
+            <a class="underline" href="index.html">Accueil</a>
+            <a class="underline" href="lieux.html">Lieux</a>
+            <a class="underline" href="evenements.html">Evenement</a>
+            <a class="underline" href="contact.html">Contact</a>
+        </div>
+    </header>
+
+
+    <div class="containeur">
+        <img src="Images/lieux/écomusée2_page_écomusée.jpg" alt="">
+        <div>
+            <div>
+                <h3>
+                    Qu’est ce que l’Écomusée d’Alsace ?
+                </h3>
+                <div class="texte">
+                    L’Écomusée d’Alsace à Ungersheim, dans le Haut-Rhin, est un musée à ciel ouvert dans lequel ont été transférées et remontées d’authentiques bâtisses alsaciennes, formant un village vivant : maisons à colombages, maisons d’ouvriers, boutiques, salon de coiffure, mairie, tour fortifiée, halle des fêtes, ferme, école, lavoir, jardins, … <br><br>
+À l’intérieur de ces édifices et dans les cours, vous pouvez  découvrir de nombreux artisans qui exercent des métiers traditionnels de l’époque, tout en partageant leur savoir-faire avec les visiteurs. Des animaux de la ferme sont présents : cochons, chevaux, vaches, oies, canards … <br><br>
+ L’Écomusée d’Alsace a donc de quoi vous proposer une sortie immersive dans un lieu insolite témoignant de la vie d’autrefois en Alsace. De quoi rendre nostalgiques les anciennes générations et montrer comment se déroulait la vie d’il y a quelques années en faisant revivre l’histoire de toute la région.
+                </div>
+
+                <h3>
+                    Des animations tous les jours
+                </h3>
+                <div class="texte">
+                    De nombreuses animations sont proposées tout au long de l’année et selon les saisons. <br>
+Les fêtes et traditions de l’Alsace célébrées à l’Écomusée d’Alsace plongent les visiteurs dans une expérience immersive manifestant l’ambiance festive d’un village d’autrefois. <br>
+Des animaux de la ferme présents à différents endroits du musée font partie des vedettes : cochons, chevaux, vaches, oies, canards... <br>
+Des tours en tracteurs et en barques ainsi que des expositions permanentes sont également proposés !
+                </div>
+
+                <h3>
+                    L’Écomusée et la covid-19 ?
+                </h3>
+                <div class="texte">
+                    Un ensemble de mesures sanitaires ont été prises en compte afin de garantir la santé et la sécurité de tous. <br>
+Depuis le lundi 20 juillet, et selon le décret, le port du masque est obligatoire sur l'ensemble du site, dès l'âge de 11 ans. <br>
+ Les visiteurs doivent également veiller aux gestes barrières : la distanciation sociale, le lavage et/ou la désinfection des mains, ne pas toucher les animaux, ne pas toucher les surfaces et l’accès limité dans certaines maisons.
+                </div>
+            </div>
+
+            <div>
+                <h3>
+                    Accessibilité
+                </h3>
+                <div class="texte">
+                    L'Écomusée d'Alsace n'est pas référencé dans les GPS ! <br>
+                    > Afin de ne pas vous égarer dans la commune d’Ungersheim, nous vous conseillons de renseigner directement les coordonnées GPS du musée : 47°51'7,4''N ; 7°17'6''E. <br><br>
+                    > En venant de Strasbourg et Colmar : autoroute A35 direction Mulhouse, sortie Ensisheim, suivre Écomusée d’Alsace <br><br>
+                    > En venant de Bâle, Mulhouse, Belfort : autoroute A36, sortie n° 18 (ou 18 bis en venant de Belfort) direction Guebwiller, puis D430, sortie n°5 vers Bollwiller / Écomusée, suivre Écomusée d’Alsace. <br>
+                     Voitures et cars : parking gratuit à l'entrée du musée. <br><br>
+                    Les visiteurs du musée peuvent également se rendre sur place à vélo et  déposer leurs véhicules à deux roues le temps de la visite dans un garage à vélos, construit avec de vieux objets, prévu spécialement. <br><br>
+                    Téléphone : 03 89 74 44 74
+                </div>
+                <div class="adresse">
+                    <div>Adresse :<br> Chemin du Grosswald,<br> 68190 Ungersheim</div>
+                </div>
+                <div id="mapid">
+                    <script>
+                        var mymap = L.map('mapid').setView([47.777838517057155, 7.313387632377312], 13);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(mymap);
+
+                        var MMI = L.icon({
+                            iconUrl: 'https://www.flaticon.com/svg/static/icons/svg/854/854853.svg',
+
+                            iconSize: [30, 30], // size of the icon
+                            shadowSize: [50, 64], // size of the shadow
+                        });
+                        L.marker([47.729799, 7.301740], { icon: MMI }).addTo(mymap);
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="part2">
+        <div class="comecrire">
+            <textarea rows=5 cols=35 placeholder="Votre message"></textarea>
+        </div>
+        <button href="#" class="bouton">Envoyer</button>
+
+        <div class="comenvoie">
+            <h3>Commentaire</h3>
+            <div class="commentaire">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footercontact">
+            <div class="reseaux">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+            </div>
+            <div class="footertexte">
+                hopla@gmail.com <br>
+                61 Rue Albert Camus,<br> 68200 Mulhouse - (<a href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+                    Map</a>)
+            </div>
+        </div>
+        <div class="footer2">
+            <div class="footeradress">2020 © Hopla<br>
+                Tous droits réservés
+            </div>
+            <div class="mention">
+                <a href="mentionslegales.html">Mentions légales</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+<script src="javascript/script.js"></script>
+
+</html>
