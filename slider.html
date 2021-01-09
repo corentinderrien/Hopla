@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background: #111;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 200px;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+        background: lightcoral;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+    }
+
+    .swiper-pagination {
+        color: red;
+    }
+</style>
+
+<body>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=2"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=3"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=4"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=5"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=6"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=7"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/300/300?random=8"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
+
+</html>
