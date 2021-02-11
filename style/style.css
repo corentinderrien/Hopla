@@ -37,10 +37,319 @@ section {
   background-repeat: no-repeat;
   padding: 50px;
   align-items: center;
-  justify-content: center;
   }
 
 
+/****************************/
+/*       Code Lieux         */
+/****************************/
+  .split{
+    display: flex;
+    flex-direction: column;
+  }
+  .split:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background: linear-gradient(#000, transparent);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  section .screen {
+    position: relative;
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: 1s;
+  }
+
+  section:hover .screen {
+    opacity: 0.1;
+  }
+
+  section .screen:hover {
+    flex-grow: 5;
+    opacity: 1;
+    
+  }
+
+  section .screen:nth-child(1) {
+    background: url(../img/Ecomusee.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+
+  section .screen:nth-child(2) {
+    background: url(../img/Monunivers.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  section .screen:nth-child(3) {
+    background: url(../img/Singe.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  section .screen .content {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    background: #fff;
+    border-radius: 20px 0 0 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: 0.5s;
+    text-align: justify;
+  }
+  section .screen .content:hover{
+      cursor: pointer;
+  }
+  section .screen:hover .content{
+    transform: translateX(0);
+    transition-delay: 200ms;
+  }
+  section .screen .content h2{
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: lightsalmon;
+  }
+  section .screen .content h2{
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: rgb(66, 19, 0);
+  }
+
+/****************************/
+/*       Code Evenement     */
+/****************************/
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: fixed;
+    background: url(../img/eventbc2.jpg);
+  }
+  .swiper-slide img{
+    height: auto;
+    width: 70%;
+    position: absolute;
+    top: 65%;
+  }
+  .swiper-slide .title {
+    font-size: 41px;
+    font-weight: 300;
+  }
+
+  .swiper-slide .subtitle {
+    font-size: 21px;
+  }
+
+  .swiper-slide .text {
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.3;
+  }
+
+/****************************/
+/*       Code Contact       */
+/****************************/
+  .contact{
+    position: relative;
+    background-color: yellowgreen;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "formulaire_contact"
+    "coordonnees";
+    align-items: center;
+    pointer-events: none;
+  }
+  .coordonnees{
+    grid-area: "coordonnees";
+  }
+  .tagline_contact{
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    transition: 2s;
+    transform: translateY(-100px);
+    letter-spacing: 30px
+  }
+  .tagline_contact2{
+    transform: translateY(0);
+    letter-spacing: 5px;
+    z-index: 10;
+  }
+  .formulaire_contact{
+    display: flex;
+    flex-direction: column;
+    grid-area: formulaire_contact;
+    align-items: center;
+    justify-content: center;
+    pointer-events:fill;
+    z-index: 10;
+  }
+  .intro {
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+  }
+  .adresse {
+    text-align: center;
+    position: relative;
+    top: 30px;
+  }
+  #mapid {
+    filter: grayscale(100%);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    z-index: 1;
+    pointer-events:fill;
+    transition: 500ms ease-in-out;
+  }
+  .popup{
+    text-align: center;
+    font-family: Kufam;
+  }
+  
+  /* form starting stylings ------------------------------- */
+  .group 			  { 
+    position:relative; 
+    margin-bottom:10px; 
+    z-index: 10;
+  }
+  input 				{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:285px;
+    border-radius: 12px 12px 0 0;
+    border:none;
+    border-bottom:1px solid #757575;
+  }
+  input:focus 		{ outline:none; }
+
+  /* LABEL ======================================= */
+  label 				 {
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+
+  /* active state */
+  input:focus ~ label, input:valid ~ label 		{
+    left:310px;
+    font-size:20px;
+    font-weight: bold;
+    color:#5264AE;
+  }
+
+  /* BOTTOM BARS ================================= */
+  .bar 	{ position:relative; display:block; width:300px; }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#5264AE; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%; 
+  }
+
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+  }
+
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position:absolute;
+    height:60%; 
+    width:100px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+  }
+
+  /* ANIMATIONS ================ */
+  @-webkit-keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @-moz-keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
 
 /****************************/
 /****************************/
@@ -198,124 +507,27 @@ section {
   /****************************/
   .split{
     display: flex;
-  }
-  .split:before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 20%;
-    background: linear-gradient(#000, transparent);
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  section .screen {
-    position: relative;
-    flex-grow: 2;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    overflow: hidden;
-    transition: 1s;
-  }
-
-  section:hover .screen {
-    opacity: 0.1;
-  }
-
-  section .screen:hover {
-    flex-grow: 5;
-    opacity: 1;
-    
-  }
-
-  section .screen:nth-child(1) {
-    background: url(../img/Ecomusee.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
-  }
-
-  section .screen:nth-child(2) {
-    background: url(../img/Monunivers.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  section .screen:nth-child(3) {
-    background: url(../img/Singe.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    flex-direction: initial;
   }
 
   section .screen .content {
-    position: absolute;
     width: 400px;
-    height: auto;
-    background: #fff;
     border-radius: 40px 0 0 0;
     padding: 40px;
-    box-sizing: border-box;
-    transform: translateX(100%);
-    transition: 0.5s;
-    text-align: justify;
   }
-  section .screen .content:hover{
-      cursor: pointer;
-  }
-  section .screen:hover .content{
-    transform: translateX(0);
-    transition-delay: 200ms;
-  }
+
   section .screen .content h2{
-    font-size: 2em;
-    letter-spacing: 1px;
-    color: lightsalmon;
-  }
-  section .screen .content h2{
-    margin: 0;
-    padding: 0;
     font-size: 3em;
-    letter-spacing: 1px;
-    color: rgb(66, 19, 0);
   }
 
   /****************************/
   /*       Code Evenement     */
   /****************************/
 
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swiper-slide {
-    font-size: 18px;
-    color: #fff;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 40px 60px;
-    overflow: hidden;
-  }
   .swiper-wrapper{
     padding: 100px;
   }
-  .parallax-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 130%;
-    height: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: fixed;
-    background: url(../img/eventbc2.jpg);
-  }
+ 
   .swiper-slide img{
     position: absolute;
     top: 30%;
@@ -323,184 +535,23 @@ section {
     height: auto;
     width: 20%;
   }
-  .swiper-slide .title {
-    font-size: 41px;
-    font-weight: 300;
-  }
 
-  .swiper-slide .subtitle {
-    font-size: 21px;
-  }
-
-  .swiper-slide .text {
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
-  }
   /****************************/
   /*       Code Contact       */
   /****************************/
   .contact{
-    position: relative;
-    background-color: yellowgreen;
-    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
     "formulaire_contact coordonnees";
-    align-items: center;
-    pointer-events: none;
   }
-  .coordonnees{
-    grid-area: coordonnees;
-  }
-  .tagline_contact{
-    color: white;
-    padding: 20px;
-    text-align: center;
-    position: absolute;
-    margin: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: black;
-    transition: 2s;
-    transform: translateY(-100px);
-    letter-spacing: 30px
-  }
-  .tagline_contact2{
-    transform: translateY(0);
-    letter-spacing: 10px;
-    z-index: 10;
-  }
-  .formulaire_contact{
-    display: flex;
-    flex-direction: column;
-    grid-area: formulaire_contact;
-    align-items: center;
-    justify-content: center;
-    pointer-events:fill;
-    z-index: 10;
-  }
-  .intro {
-    text-align: center;
-    padding: 15px;
-    border-radius: 20px;
-  }
-  .adresse {
-    text-align: center;
-    position: relative;
-    top: 30px;
-  }
+
   #mapid {
-    filter: grayscale(100%);
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     width: 50%;
-    z-index: 1;
-    pointer-events:fill;
-    transition: 500ms ease-in-out;
-  }
-  .popup{
-    text-align: center;
-    font-family: Kufam;
-  }
-  /* form starting stylings ------------------------------- */
-  .group 			  { 
-    position:relative; 
-    margin-bottom:20px; 
-    z-index: 10;
-  }
-  input 				{
-    font-size:18px;
-    padding:10px 10px 10px 5px;
-    display:block;
-    width:285px;
-    border-radius: 12px 12px 0 0;
-    border:none;
-    border-bottom:1px solid #757575;
-  }
-  input:focus 		{ outline:none; }
-
-  /* LABEL ======================================= */
-  label 				 {
-    color:#999; 
-    font-size:18px;
-    font-weight:normal;
-    position:absolute;
-    pointer-events:none;
-    left:5px;
-    top:10px;
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
-  }
-
-  /* active state */
-  input:focus ~ label, input:valid ~ label 		{
-    left:310px;
-    font-size:20px;
-    font-weight: bold;
-    color:#5264AE;
-  }
-
-  /* BOTTOM BARS ================================= */
-  .bar 	{ position:relative; display:block; width:300px; }
-  .bar:before, .bar:after 	{
-    content:'';
-    height:2px; 
-    width:0;
-    bottom:1px; 
-    position:absolute;
-    background:#5264AE; 
-    transition:0.2s ease all; 
-    -moz-transition:0.2s ease all; 
-    -webkit-transition:0.2s ease all;
-  }
-  .bar:before {
-    left:50%;
-  }
-  .bar:after {
-    right:50%; 
-  }
-
-  /* active state */
-  input:focus ~ .bar:before, input:focus ~ .bar:after {
-    width:50%;
-  }
-
-  /* HIGHLIGHTER ================================== */
-  .highlight {
-    position:absolute;
-    height:60%; 
-    width:100px; 
-    top:25%; 
-    left:0;
-    pointer-events:none;
-    opacity:0.5;
-  }
-
-  /* active state */
-  input:focus ~ .highlight {
-    -webkit-animation:inputHighlighter 0.3s ease;
-    -moz-animation:inputHighlighter 0.3s ease;
-    animation:inputHighlighter 0.3s ease;
-  }
-
-  /* ANIMATIONS ================ */
-  @-webkit-keyframes inputHighlighter {
-      from { background:#5264AE; }
-    to 	{ width:0; background:transparent; }
-  }
-  @-moz-keyframes inputHighlighter {
-      from { background:#5264AE; }
-    to 	{ width:0; background:transparent; }
-  }
-  @keyframes inputHighlighter {
-      from { background:#5264AE; }
-    to 	{ width:0; background:transparent; }
+    height: 100%;
   }
 
   /****************************/
