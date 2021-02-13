@@ -512,6 +512,74 @@ section {
   }
 
 /****************************/
+/*    Code du Footer        */
+/****************************/
+
+  footer{
+    transition: 500ms ease-in-out;
+} 
+
+.footercontact{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    color: white;
+    background-color: rgb(71, 71, 71);
+    padding: 10px;
+    padding-right: 50px;
+}
+
+.reseaux{
+    display: flex;
+    flex-direction: initial;
+}
+
+.reseaux a img{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 35px;
+}
+
+.footertext{
+    font-size: 30px;
+    margin: 10px;
+    text-align: center;
+}
+
+.footer2{
+    background-color: black;
+    color: yellowgreen;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    background-position: center;
+    background-size: cover;
+}
+
+.mention{
+    text-decoration: none;
+    color: rgb(31, 46, 0);
+}
+
+.googlemap{
+  text-decoration: none;
+    color: rgb(31, 46, 0);
+}
+
+.footeradress{
+    text-align: center;
+}
+
+footer:hover{
+    box-shadow: 0px 0px 10em rgba(0,0,0,0.19);
+}
+
+/****************************/
 /****************************/
 /*       Code PC        */
 /****************************/
@@ -733,5 +801,18 @@ section {
   /****************************/
   /*       Code FOOTER        */
   /****************************/
+  .reseaux{
+    padding-left: 70px;
+  }
+
+  .reseaux a img{
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .footertext{
+      margin: 10px;
+  }
+
 
 }

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/commun.css">
+    <link rel="stylesheet" href="./style/commun.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <style>
@@ -21,7 +22,7 @@
 
     .container h3 {
         margin-bottom: 15px;
-        color: #b54a4a;
+        color: yellowgreen;
     }
 
     .container div {
@@ -32,29 +33,28 @@
 
 <body>
 
-    <nav>
-        <ul>
-            <img src="svg/Fichier2.svg" width="100%" height="100px">
-            <li> <a class="underline" href="index.html">Accueil</a> </li>
-            <li> <a class="underline" href="lieux.html">Lieux</a> </li>
-            <li> <a class="underline" href="evenements.html">Evenement</a> </li>
-            <li> <a class="underline" href="contact.html">Contact</a> </li>
-        </ul>
-    </nav>
+    <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <button id="hamburger-button" onclick="menu()">&#9776;</button>
 
-    <header>
-        <button id="hamburger-button" onclick="menu()">&#9776;</button>
+    <img src="svg/fichier 1.svg" width="100%" height="100px">
+    <div class="navbar-menu">
+      <a class="nav-link" href="index.html">Accueil</a>
+      <a class="nav-link" href="index.html">Lieux</a>
+      <a class="nav-link" href="index.html">Evenement</a>
+      <a class="nav-link" href="index.html">Contact</a>
+    </div>
+  </nav>
 
-        <a href="index.html" class="headerlogo">
-            <img src="svg/Fichier1.svg" width="100%" height="60px">
-        </a>
-        <div class="menupc">
-            <a class="underline" href="index.html">Accueil</a>
-            <a class="underline" href="lieux.html">Lieux</a>
-            <a class="underline" href="evenements.html">Evenement</a>
-            <a class="underline" href="contact.html">Contact</a>
-        </div>
-    </header>
+  <div class="menutel">
+    <ul>
+        <img class="logo" src="svg/fichier 2.svg" width="100%" height="100px">
+        <li> <a class="underline" onclick="menu()" href="index.html">Accueil</a> </li>
+        <li> <a class="underline" onclick="menu()" href="index.html">Lieux</a> </li>
+        <li> <a class="underline" onclick="menu()" href="index.html">Evenement</a> </li>
+        <li> <a class="underline" onclick="menu()" href="index.html">Contact</a> </li>
+    </ul>
+  </div>
 
     <h1 class="titre">Mentions légales</h1>
     <div class="container">
@@ -285,7 +285,7 @@
             </div>
             <div class="footertexte">
                 hopla@gmail.com <br>
-                61 Rue Albert Camus,<br> 68200 Mulhouse - (<a href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+                61 Rue Albert Camus,<br> 68200 Mulhouse - (<a class="googlemap" href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
                     Map</a>)
             </div>
         </div>
@@ -294,11 +294,11 @@
                 Tous droits réservés
             </div>
             <div class="mention">
-                <a href="mentionslegales.html">Mentions légales</a>
+                <a class="mention" href="mentionslegales.html">Mentions légales</a>
             </div>
-
+    
         </div>
-    </footer>
+      </footer>
 </body>
 
 <script src="javascript/script.js"></script>
