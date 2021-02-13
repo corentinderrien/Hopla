@@ -20,7 +20,9 @@
 <body>
   <!-- NAVIGATION -->
   <nav class="navbar" id="navbar">
-    <img src="../svg/fichier1.svg" width="100%" height="100px">
+    <button id="hamburger-button" onclick="menu()">&#9776;</button>
+
+    <img src="svg/fichier 1.svg" width="100%" height="100px">
     <div class="navbar-menu">
       <a class="nav-link" href="#">Accueil</a>
       <a class="nav-link" href="#lieux">Lieux</a>
@@ -28,6 +30,16 @@
       <a class="nav-link" href="#contact">Contact</a>
     </div>
   </nav>
+
+  <div class="menutel">
+    <ul>
+        <img class="logo" src="svg/fichier 2.svg" width="100%" height="100px">
+        <li> <a class="underline" onclick="menu()" href="#">Accueil</a> </li>
+        <li> <a class="underline" onclick="menu()" href="#lieux">Lieux</a> </li>
+        <li> <a class="underline" onclick="menu()" href="#event">Evenement</a> </li>
+        <li> <a class="underline" onclick="menu()" href="#contact">Contact</a> </li>
+    </ul>
+  </div>
 
   <!-- ACCUEIL -->
   <section class="fristcontent">

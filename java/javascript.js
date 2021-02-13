@@ -1,3 +1,9 @@
+// Menu de navigation pour téléphone
+function menu() {
+    document.querySelector(".menutel").classList.toggle("ouvert");
+    document.querySelector("#hamburger-button").classList.toggle("burger2");
+}
+
 var divs = document.querySelectorAll('.nav-link');
 window.onscroll = function () {
 
