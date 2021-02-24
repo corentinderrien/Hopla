@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/commun.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <title>Document</title>
+</head>
+
+<style>
+  body {
+    background-color: #72b9af;
+    background-image: linear-gradient(132deg, #72b9af 0%, #5da066 100%);
+  }
+
+
+
+  /****************************/
+  /*       Code Partie 1      */
+  /****************************/
+  section {
+    text-align: center;
+  }
+
+  /* Swiper */
+
+  .partie1>.swiper-slider img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Texte */
+
+  .intro {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .content {
+    z-index: 1;
+    color: white;
+    margin-top: 140px;
+    margin-bottom: 6%;
+  }
+
+  .titre {
+    font-size: 3em;
+    line-height: 1.1em;
+    margin-left: 3%;
+  }
+
+  .titre span {
+    display: block;
+  }
+
+  .text1 {
+    text-transform: uppercase;
+    font-size: 55px;
+    letter-spacing: 8px;
+    color: #262220;
+    position: relative;
+    animation: text 3s 1;
+    margin-bottom: 5px;
+  }
+
+  .text2 {
+    font-size: 16px;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    color: #a15c38;
+    animation: text2 3s 1;
+  }
+
+  @keyframes text {
+    0% {
+      margin-bottom: -15px;
+    }
+
+    30% {
+      letter-spacing: 25px;
+      margin-bottom: -15px;
+    }
+
+    85% {
+      letter-spacing: 8px;
+      margin-bottom: -15px;
+    }
+  }
+
+  .fleche {
+    display: none;
+  }
+
+
+
+
+  /****************************/
+  /*       Code Partie 2      */
+  /****************************/
+
+  /* Swiper */
+
+  .partie2>.swiper-container {
+    height: 100%;
+  }
+
+  .partie2>.swiper-slider img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contenu {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+
+  .covid {
+    margin-top: 10%;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mask {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+  }
+
+  .mask:hover {
+    transform: scale(1.15);
+
+  }
+
+  /****************************/
+  /*       Code Partie 3      */
+  /****************************/
+
+  /* Map */
+  #mapid {
+    filter: grayscale(100%);
+    height: 50vh;
+    pointer-events: fill;
+    transition: 500ms ease-in-out;
+  }
+
+  .popup {
+    text-align: center;
+    font-family: Kufam;
+  }
+
+  .acessibilite {
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 6%;
+
+  }
+
+  .network {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    align-items: center;
+  }
+
+  .icones img:hover {
+    transform: scale(1.15);
+
+  }
+
+  /****************************/
+  /****************************/
+  /*       Code PC        */
+  /****************************/
+  /****************************/
+
+  @media screen and (min-width: 1200px) {
+
+    section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      text-align: initial;
+    }
+
+    /****************************/
+    /*       Code Partie 1      */
+    /****************************/
+
+    /* Swiper */
+
+    .partie1>.swiper-container {
+      height: 100%;
+      width: 50%;
+      left: 50%;
+      position: absolute;
+    }
+
+    .partie1>.swiper-slider img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Texte */
+
+    .intro {
+      margin-left: 3%;
+    }
+
+    .content {
+      position: absolute;
+      z-index: 1;
+      color: white;
+      margin-top: 120px;
+      left: 2%;
+      right: 52%;
+    }
+
+    .titre {
+      font-size: 3em;
+      line-height: 1.1em;
+      margin-left: 3%;
+    }
+
+    .titre span {
+      display: block;
+    }
+
+    .text1 {
+      text-transform: uppercase;
+      font-size: 60px;
+      letter-spacing: 8px;
+      color: #262220;
+      position: relative;
+      animation: text 3s 1;
+      margin-bottom: 30px;
+    }
+
+    .text2 {
+      font-size: 18px;
+      letter-spacing: 8px;
+      color: #a15c38;
+      animation: text2 3s 1;
+    }
+
+    @keyframes text {
+      0% {
+        margin-bottom: -15px;
+      }
+
+      30% {
+        letter-spacing: 25px;
+        margin-bottom: -15px;
+      }
+
+      85% {
+        letter-spacing: 8px;
+        margin-bottom: -15px;
+      }
+    }
+
+    .fleche {
+      display: initial;
+      position: absolute;
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      width: 20px;
+      height: 20px;
+      transform: rotate(45deg);
+      top: 100;
+      left: 50%;
+      animation: bondit 2s infinite ease-in;
+      margin-top: 30px;
+    }
+
+    @keyframes bondit {
+      0% {
+        transform: scale(1, 1) translateY(0) rotate(45deg);
+      }
+
+      50% {
+        transform: scale(1.05, 0.9) translateY(30px) rotate(45deg);
+      }
+
+      100% {
+        transform: scale(1, 1) translateY(0) rotate(45deg);
+      }
+    }
+
+    /****************************/
+    /*       Code Partie 2      */
+    /****************************/
+
+    /* Swiper */
+    .partie2 {
+      top: 0;
+    }
+
+    .partie2>.swiper-container {
+      height: 100%;
+      width: 50%;
+      right: 50%;
+      position: absolute;
+    }
+
+    .partie2>.swiper-slider img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .contenu {
+      left: 50%;
+      right: 2%;
+      margin-top: 6%;
+      position: absolute;
+    }
+
+    .covid {
+      margin-top: 10%;
+    }
+
+    .title {
+      display: flex;
+      justify-content: initial;
+    }
+
+    .mask {
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+    }
+
+    .mask:hover {
+      transform: scale(1.15);
+
+    }
+
+    /****************************/
+    /*       Code Partie 3      */
+    /****************************/
+
+    /* Map */
+    #mapid {
+      filter: grayscale(100%);
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      left: 50%;
+      pointer-events: fill;
+      transition: 500ms ease-in-out;
+    }
+
+    .popup {
+      text-align: center;
+      font-family: Kufam;
+    }
+
+    .acessibilite {
+      margin-top: 3%;
+      right: 52%;
+      position: absolute;
+    }
+
+    .network {
+      display: flex;
+      flex-direction: column;
+      margin-top: 4%;
+      align-items: center;
+    }
+
+    .icones img:hover {
+      transform: scale(1.15);
+
+    }
+
+  }
+</style>
+
+<body>
+  <!-- NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <button id="hamburger-button" onclick="menu()">&#9776;</button>
+
+    <img src="svg/Fichier1.svg" width="100%" height="100px">
+    <div class="navbar-menu">
+      <a class="nav-link" href="index.html">Accueil</a>
+      <a class="nav-link" href="index.html">Lieux</a>
+      <a class="nav-link" href="index.html">Evenement</a>
+      <a class="nav-link" href="index.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="menutel">
+    <ul>
+      <img class="logo" src="svg/Fichier2.svg" width="100%" height="100px">
+      <li> <a class="underline" onclick="menu()" href="index.html">Accueil</a> </li>
+      <li> <a class="underline" onclick="menu()" href="index.html">Lieux</a> </li>
+      <li> <a class="underline" onclick="menu()" href="index.html">Evenement</a> </li>
+      <li> <a class="underline" onclick="menu()" href="index.html">Contact</a> </li>
+    </ul>
+  </div>
+
+  <!-- Partie 1 -->
+  <section class="partie1">
+
+    <!-- Texte -->
+    <div class="content">
+      <div class="titre">
+        <h1 class="text1">Écomusée d'Alsace</h1>
+        <span class="text2">Ungersheim, Haut-Rhin</span>
+      </div>
+      <div class="intro">
+        <p>L'Écomusée est un <b>musée à ciel</b> ouvert dans lequel ont été transférées et remontées
+          d’authentiques
+          bâtisses alsaciennes, formant un <b>village vivant </b>: maisons à colombages, maisons d’ouvriers,
+          boutiques, salon de coiffure, mairie, tour fortifiée,
+          halle des fêtes, ferme, école, lavoir, jardins, ...
+          Vous pourrez y découvrir de nombreux artisans qui exercent des métiers traditionnels de l’époque,
+          tout en partageant leur savoir-faire avec les visiteurs. Des animaux de la ferme sont également présents
+          : cochons, chevaux, vaches, oies, canards …
+          <br><br> L’Écomusée d’Alsace a donc de quoi vous proposer une <b>sortie immersive</b> dans un lieu
+          insolite témoignant de la vie d’autrefois en Alsace. De quoi rendre
+          nostalgiques les anciennes générations et montrer comment se déroulait la vie d’il y a quelques années
+          en faisant revivre l’histoire de toute la région !
+        </p>
+      </div>
+
+      <a href="#descend">
+        <div class="fleche"></div>
+      </a>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/ecomusee4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/ecomusee3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/ecomusee1.jpg" alt="">
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+
+  </section>
+
+  <!-- Partie 2 -->
+  <section class="partie2" id="descend">
+
+    <!-- Texte -->
+    <div class="contenu">
+      <h2>Des animations tous les jours</h2>
+      <p>De nombreuses animations sont proposées tout au long de l’année et selon les saisons.
+        Les <b>fêtes</b> et <b> traditions</b> de l’Alsace célébrées à l’Écomusée d’Alsace plongent les visiteurs dans
+        une
+        expérience immersive manifestant l’ambiance festive d’un village d’autrefois.
+        Des <b>animaux de la ferme</b> présents à différents endroits du musée font partie des vedettes : cochons,
+        chevaux, vaches, oies, canards...
+        Des <b>tours en tracteurs et en barques</b> ainsi que des <b>expositions permanentes</b> sont également
+        disponibles !<br>
+        Des <b>visites guidées</b> sont proposées, le temps d’une journée ou d’une demi-journée, avec une classe, ou
+        votre groupe.
+        <br><br> > Partez à la découverte des métiers et d'un village d'antan !
+
+      </p>
+      <div class="covid">
+        <div class="title">
+          <img class="mask" src="img/icons8-masque-de-protection-64.png" alt="">
+          <h2>L’Écomusée et la covid-19 ?</h2>
+        </div>
+        <div> Un ensemble de <b>mesures sanitaires</b> a été pris en compte afin de garantir la santé et la sécurité de
+          tous.
+          Depuis le lundi 20 juillet, et selon le décret, le port du masque est obligatoire sur l'ensemble du site,
+          dès l'âge de 11 ans.
+          <br>Les visiteurs doivent également veiller aux <b>gestes barrières</b> : la distanciation sociale, le lavage
+          et/ou la
+          désinfection des mains, ne pas toucher les animaux, ne pas toucher les surfaces et l’accès limité dans
+          certaines maisons.
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/animation1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/animation2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/animation3.jpg" alt="">
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white"></div>
+    </div>
+
+  </section>
+
+
+
+  <!-- Partie 3 -->
+  <section>
+
+    <!-- Texte -->
+    <div class="acessibilite">
+      <h2>
+        Accessibilité
+      </h2>
+      <div>
+        L'Écomusée d'Alsace n'est pas référencé dans les GPS ! <br><br>
+        > Afin de ne pas vous égarer dans la commune d’Ungersheim, nous vous conseillons de renseigner directement les
+        coordonnées GPS du musée : 47°51'7,4''N ; 7°17'6''E. <br><br>
+        > En venant de Strasbourg et Colmar : autoroute A35 direction Mulhouse, sortie Ensisheim, suivre Écomusée
+        d’Alsace <br><br>
+        > En venant de Bâle, Mulhouse, Belfort : autoroute A36, sortie n° 18 (ou 18 bis en venant de Belfort) direction
+        Guebwiller, puis D430, sortie n°5 vers Bollwiller / Écomusée, suivre Écomusée d’Alsace. <br>
+        Voitures et cars : parking gratuit à l'entrée du musée. <br><br>
+        Les visiteurs du musée peuvent également se rendre sur place à vélo et déposer leurs véhicules à deux roues le
+        temps de la visite dans un garage à vélos, construit avec de vieux objets, prévu spécialement. <br><br>
+        <b>Téléphone :</b> 03 89 74 44 74
+      </div>
+
+      <div class="adresse">
+        <div><b>Adresse :</b><br> Chemin du Grosswald,<br> 68190 Ungersheim</div>
+      </div>
+      <div class="network">
+        <div><b>Suivez l'écomusée :</b> </div>
+        <div class="icones">
+          <a href="https://www.facebook.com/ecomusee.alsace/" target="_blank"><img class="iconetaille"
+              src="img/icons8-facebook-50.png" alt=""></a>
+          <a href="https://www.instagram.com/ecomusee_alsace/" target="_blank"><img class="iconetaille"
+              src="img/icons8-instagram-50.png" alt=""></a>
+          <a href="https://www.youtube.com/channel/UCEh4eyPl8GPwuK97f7TwJJA" target="_blank"><img class="iconetaille"
+              src="img/icons8-lecture-de-youtube-50.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="carte">
+      <div id="mapid">
+        <script>
+          var mymap = L.map('mapid').setView([47.85666438064486, 7.285200904338927], 13);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          }).addTo(mymap);
+
+          var ICONE = L.icon({
+            iconUrl: 'https://www.flaticon.com/svg/static/icons/svg/854/854853.svg',
+
+            iconSize: [30, 30], // size of the icon
+            shadowSize: [50, 64], // size of the shadow
+          });
+          L.marker([47.85666438064486, 7.285200904338927], { icon: ICONE }).addTo(mymap)
+            .bindPopup('<div class="popup"><strong>Adresse :</strong><br> Chemin du Grosswald,<br> 68190 Ungersheim</div>')
+            .openPopup();;
+
+
+        </script>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footercontact">
+      <div class="reseaux">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+      </div>
+      <div class="footertexte">
+        hopla@gmail.com <br>
+        61 Rue Albert Camus,<br> 68200 Mulhouse - (<a class="googlemap"
+          href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+          Map</a>)
+      </div>
+    </div>
+    <div class="footer2">
+      <div class="footeradress">2020 © Hopla<br>
+        Tous droits réservés
+      </div>
+      <div class="mention">
+        <a class="mention" href="mentionslegales.html">Mentions légales</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      speed: 1000,
+      parallax: true,
+      autoplay: {
+        delay: 500000000, //règle le temps pour changer un slide
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+  </script>
+
+
+
+</body>
+
+<script src="java/javascript.js"></script>
+
+</html>

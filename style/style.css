@@ -261,6 +261,7 @@ section {
   }
 
   section .screen .content {
+    text-decoration: none;
     position: absolute;
     width: 300px;
     height: auto;
@@ -271,6 +272,7 @@ section {
     transform: translateX(100%);
     transition: 0.5s;
     text-align: justify;
+    color: black;
   }
   section .screen .content:hover{
       cursor: pointer;
@@ -310,6 +312,9 @@ section {
     padding: 40px 60px;
     overflow: hidden;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .parallax-bg {
@@ -326,8 +331,6 @@ section {
   .swiper-slide img{
     height: auto;
     width: 70%;
-    position: absolute;
-    top: 65%;
   }
   .swiper-slide .title {
     font-size: 41px;
@@ -405,7 +408,7 @@ section {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 40%;
+    height: 30%;
     z-index: 1;
     pointer-events:fill;
     transition: 500ms ease-in-out;
@@ -772,6 +775,18 @@ footer:hover{
     padding: 100px;
   }
  
+  .swiper-slide {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    overflow: hidden;
+    align-items: center;
+    display: initial;
+    flex-direction: initial;
+  }
+
   .swiper-slide img{
     position: absolute;
     top: 30%;
