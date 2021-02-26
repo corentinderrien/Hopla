@@ -19,48 +19,75 @@
 </head>
 
 <body>
+
+  <!-- ANIMATION SOURIS -->
+  <div class="cursor">
+    <div class="circle"></div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+  <script>
+    document.body.addEventListener("mousemove", e => {
+      gsap.to(".circle", {
+        x: e.clientX,
+        y: e.clientY,
+        stagger: -0.10,
+      })
+    })
+
+  </script>
+
   <!-- NAVIGATION -->
   <nav class="navbar" id="navbar">
     <button id="hamburger-button" onclick="menu()">&#9776;</button>
-
-    <img src="svg/Fichier1.svg" width="100%" height="100px">
+    
+    <a href="index.html">
+      <img src="svg/Fichier1.svg" width="100%" height="100px">
+    </a>
     <div class="navbar-menu">
       <a class="nav-link" href="#">Accueil</a>
       <a class="nav-link" href="#lieux">Lieux</a>
-      <a class="nav-link" href="#event">Evenement</a>
+      <a class="nav-link" href="#event">Evenements</a>
       <a class="nav-link" href="#contact">Contact</a>
     </div>
   </nav>
 
   <div class="menutel">
     <ul>
-        <img class="logo" src="svg/Fichier2.svg" width="100%" height="100px">
-        <li> <a class="underline" onclick="menu()" href="#">Accueil</a> </li>
-        <li> <a class="underline" onclick="menu()" href="#lieux">Lieux</a> </li>
-        <li> <a class="underline" onclick="menu()" href="#event">Evenement</a> </li>
-        <li> <a class="underline" onclick="menu()" href="#contact">Contact</a> </li>
+      <img class="logo" src="svg/Fichier2.svg" width="100%" height="100px">
+      <li> <a class="underline" onclick="menu()" href="#">Accueil</a> </li>
+      <li> <a class="underline" onclick="menu()" href="#lieux">Lieux</a> </li>
+      <li> <a class="underline" onclick="menu()" href="#event">Evenement</a> </li>
+      <li> <a class="underline" onclick="menu()" href="#contact">Contact</a> </li>
     </ul>
   </div>
 
   <!-- ACCUEIL -->
   <section class="fristcontent">
-    <div class="background-parallax"></div>
     <div class="decouverte">
       <strong>Vous aimez découvrir de nouveaux lieux ?</strong>
     </div>
 
-    <div class="txtaccueil">
-      <p>
-        L’Alsace est une destination idéale, car elle regorge d'innombrables lieux à découvrir. <br>
-        Originalité, féérie, témoignage du passé ou encore rencontre inoubliable, des lieux insolites qui sortent de
-        l'ordinaire n’attendent qu’à être découvert. <br>
-        <br>
-        Alors qu’attendez-vous? Explorez ces lieux et repartez avec des souvenirs gravés à jamais !
-      </p>
+    <div class="square">
+      <span></span>
+      <span></span>
+      <span></span>
+      <div class="txtaccueil">
+        <p>
+          L’Alsace est une destination idéale, car elle regorge d'innombrables lieux à découvrir. <br>
+          Originalité, féérie, témoignage du passé ou encore rencontre inoubliable, des lieux insolites qui sortent de
+          l'ordinaire n’attendent qu’à être découvert. <br>
+          <br>
+          Alors qu’attendez-vous? Explorez ces lieux et repartez avec des souvenirs gravés à jamais !
+        </p>
 
-      <a href="#lieux"><strong>Découvrir notre sélection</strong></a>
+        <a href="#lieux"><strong>Découvrir notre sélection</strong></a>
 
+      </div>
     </div>
+
 
   </section>
 
@@ -71,7 +98,7 @@
         <h2>L'écomusée d'Alsace</h2>
         <p><strong>L’Écomusée d’Alsace</strong> à Ungersheim, est un véritable <strong>musée à ciel ouvert</strong> qui
           permet aux visiteurs de découvrir la vie quotidienne d’antan et la richesse de l’architecture alsacienne.</p>
-        </a>
+      </a>
     </div>
 
     <div class="screen">
@@ -89,7 +116,7 @@
         <h2>La Montagne des Singes</h2>
         <p><strong>La Montagne des singes</strong> est un parc animalier situé dans la commune de Kintzheim, dans lequel
           on peut observer plus de 240 singes.</p>
-        </a>
+      </a>
     </div>
   </section>
 
@@ -103,10 +130,10 @@
           <div class="title" data-swiper-parallax="-800">L'écomusée d'Alsace</div>
           <div class="subtitle" data-swiper-parallax="-500">Noêl ouvre ses portes !</div>
           <div class="text" data-swiper-parallax="-200">
-            <p>L'Ecomusée d'Alsace s'anime en fonction des saisons. La période de Noël est la période la plus 
-              chaleureuse et sans doute la plus gourmande de l'année ! Dans ce musée vivant des arts populaires 
-              et des traditions alsaciennes, on découvre l'ambiance des Noëls d'antan, ressuscitée de la manière 
-              la plus authentique qui soit. Vin chaud, bredalas, jeux dans la neige ...<br> Découvrez l'esprit et 
+            <p>L'Ecomusée d'Alsace s'anime en fonction des saisons. La période de Noël est la période la plus
+              chaleureuse et sans doute la plus gourmande de l'année ! Dans ce musée vivant des arts populaires
+              et des traditions alsaciennes, on découvre l'ambiance des Noëls d'antan, ressuscitée de la manière
+              la plus authentique qui soit. Vin chaud, bredalas, jeux dans la neige ...<br> Découvrez l'esprit et
               l'authenticité des Noëls conviviaux alsaciens permettant à chaque visiteur se sente comme chez lui !</p>
           </div>
           <img src="img/noel_ecomusee.jpg">
@@ -115,10 +142,12 @@
           <div class="title" data-swiper-parallax="-500" data-swiper-parallax-opacity="0">Mon Univers</div>
           <div class="subtitle" data-swiper-parallax="-200">Rencontre avec un acteur</div>
           <div class="text" data-swiper-parallax="-100">
-            <p>Venez rencontrer Devon Murray, l'acteur qui interprète Seamus Finnigan dans la célèbre saga "Harry Potter"
-               Réservez votre créneau horaire entre 10h30 et 17h30 pour rencontrer le jeune sorcier qui fait tout exploser.
-               Plusieurs options sont proposées : un autographe et/ou une photo ainsi qu'un forfait "Sorcier confirmé" 
-               avec la baguette de Seamus Finnigan ! <br> Une recontre mémorable ! </p>
+            <p>Venez rencontrer Devon Murray, l'acteur qui interprète Seamus Finnigan dans la célèbre saga "Harry
+              Potter"
+              Réservez votre créneau horaire entre 10h30 et 17h30 pour rencontrer le jeune sorcier qui fait tout
+              exploser.
+              Plusieurs options sont proposées : un autographe et/ou une photo ainsi qu'un forfait "Sorcier confirmé"
+              avec la baguette de Seamus Finnigan ! <br> Une recontre mémorable ! </p>
           </div>
           <img src="img/mon_univers_acteur.jpg">
         </div>
@@ -127,8 +156,10 @@
           <div class="subtitle" data-swiper-parallax="-200">Donnez à manger aux singes !</div>
           <div class="text" data-swiper-parallax="-100">
             <p>Vivez une expérience unique en famille en nourrissant les singes avec du popcorn offert à l'entrée.
-              Pariculièrement attachants, très curieux et vraiment gourmands, les singes n’hésiteront pas à s’approcher de vous.
-              La proximité incroyable est donc incroyable et vous permettra de découvrir de très près ces animaux en vivant une 
+              Pariculièrement attachants, très curieux et vraiment gourmands, les singes n’hésiteront pas à s’approcher
+              de vous.
+              La proximité incroyable est donc incroyable et vous permettra de découvrir de très près ces animaux en
+              vivant une
               expérience immersive et inoubliable <br> Rendez-vous dès maintenant !</p>
           </div>
           <img src="img/montagnes_des_singes_nourriture.jpg">
@@ -200,7 +231,8 @@
             .bindPopup('<div class="popup"><strong>Adresse :</strong><br> 61 Rue Albert Camus,<br> 68200 Mulhouse.</div>')
             .openPopup();;
 
-          
+
+
         </script>
       </div>
     </div>
@@ -208,23 +240,24 @@
 
   <footer>
     <div class="footercontact">
-        <div class="reseaux">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
-        </div>
-        <div class="footertexte">
-            hopla@gmail.com <br>
-            61 Rue Albert Camus,<br> 68200 Mulhouse - (<a class="googlemap" href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
-                Map</a>)
-        </div>
+      <div class="reseaux">
+        <a href="https://twitter.com/hoplaTravel" target="_blank"><img src="svg/twitter.svg" alt=""></a>
+        <a href="https://www.instagram.com/hopla.travel/" target="_blank"><img src="svg/instagram.svg" alt=""><a>
+      </div>
+      <div class="footertexte">
+        hopla@gmail.com <br>
+        61 Rue Albert Camus,<br>
+        68200 Mulhouse (<a class="googlemap" href="https://goo.gl/maps/TSnRVutd2NRsDCDg9" target="_blank"> GoogleMap
+        </a>)
+      </div>
     </div>
     <div class="footer2">
-        <div class="footeradress">2020 © Hopla<br>
-            Tous droits réservés
-        </div>
-        <div class="mention">
-            <a class="mention" href="mentionslegales.html">Mentions légales</a>
-        </div>
+      <div class="footeradress">2020 © Hopla<br>
+        Tous droits réservés
+      </div>
+      <div class="mention">
+        <a class="mention" href="mentionslegales.html">Mentions légales</a>
+      </div>
 
     </div>
   </footer>

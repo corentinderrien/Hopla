@@ -56,50 +56,51 @@
     margin-bottom: 6%;
   }
 
+  
   .titre {
-    font-size: 3em;
-    line-height: 1.1em;
-    margin-left: 3%;
-
-  }
-
-  .titre span {
-    display: block;
-  }
-
-  .text1 {
-    text-transform: uppercase;
-    font-size: 55px;
-    letter-spacing: 8px;
-    color: #262220;
-    position: relative;
-    animation: text 3s 1;
-    margin-bottom: 5px;
-  }
-
-  .text2 {
-    font-size: 16px;
-    letter-spacing: 8px;
-    margin-bottom: 20px;
-    color: #a15c38;
-    animation: text2 3s 1;
-  }
-
-  @keyframes text {
-    0% {
-      margin-bottom: -15px;
+        font-size: 3em;
+        line-height: 1.1em;
+        margin-left: 3%;
     }
 
-    30% {
-      letter-spacing: 25px;
-      margin-bottom: -15px;
+    .titre span {
+        display: block;
     }
 
-    85% {
-      letter-spacing: 8px;
-      margin-bottom: -15px;
+    .text1 {
+        text-transform: uppercase;
+        font-size: 28px;
+        letter-spacing: 8px;
+        color: #262220;
+        position: relative;
+        animation: text 3s 1;
+        margin-bottom: 5px;
     }
-  }
+
+    .text2 {
+        font-size: 16px;
+        letter-spacing: 8px;
+        margin-bottom: 20px;
+        color: #a15c38;
+        animation: text2 3s 1;
+    }
+
+
+    @keyframes text {
+        0% {
+            margin-bottom: -15px;
+        }
+
+        30% {
+            letter-spacing: 15px;
+            margin-bottom: -15px;
+        }
+
+        85% {
+            letter-spacing: 8px;
+            margin-bottom: -15px;
+        }
+    }
 
   .fleche {
     display: none;
@@ -264,12 +265,12 @@
       }
 
       30% {
-        letter-spacing: 25px;
+        letter-spacing: 10px;
         margin-bottom: -15px;
       }
 
       85% {
-        letter-spacing: 8px;
+        letter-spacing: 4px;
         margin-bottom: -15px;
       }
     }
@@ -396,11 +397,13 @@
   <nav class="navbar" id="navbar">
     <button id="hamburger-button" onclick="menu()">&#9776;</button>
 
-    <img src="svg/Fichier1.svg" width="100%" height="100px">
+    <a href="index.html">
+      <img src="svg/Fichier1.svg" width="100%" height="100px">
+    </a>
     <div class="navbar-menu">
       <a class="nav-link" href="index.html">Accueil</a>
       <a class="nav-link" href="index.html #lieux">Lieux</a>
-      <a class="nav-link" href="index.html #event">Evenement</a>
+      <a class="nav-link" href="index.html #event">Evenements</a>
       <a class="nav-link" href="index.html #contact">Contact</a>
     </div>
   </nav>
@@ -410,7 +413,7 @@
       <img class="logo" src="svg/Fichier2.svg" width="100%" height="100px">
       <li> <a class="underline" onclick="menu()" href="index.html">Accueil</a> </li>
       <li> <a class="underline" onclick="menu()" href="index.html #lieux">Lieux</a> </li>
-      <li> <a class="underline" onclick="menu()" href="index.html #event">Evenement</a> </li>
+      <li> <a class="underline" onclick="menu()" href="index.html #event">Evenements</a> </li>
       <li> <a class="underline" onclick="menu()" href="index.html #contact">Contact</a> </li>
     </ul>
   </div>
@@ -421,7 +424,7 @@
     <!-- Texte -->
     <div class="content">
       <div class="titre">
-        <h1 class="text1">La Montagne des Singes</h1>
+        <h1 class="text1">La Montagne <br> des Singes</h1>
         <span class="text2"> Kintzheim, Bas-Rhin</span>
       </div>
       <div class="intro">
@@ -445,13 +448,43 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="img/montagne_des_singes4.jpg" alt="">
+          <img
+        sizes="(max-width: 1000px) 100vw, 1000px"
+        srcset="
+        img/montagne_des_singes4_uyov8d_c_scale,w_200.jpg 200w,
+        img/montagne_des_singes4_uyov8d_c_scale,w_451.jpg 451w,
+        img/montagne_des_singes4_uyov8d_c_scale,w_618.jpg 618w,
+        img/montagne_des_singes4_uyov8d_c_scale,w_772.jpg 772w,
+        img/montagne_des_singes4_uyov8d_c_scale,w_917.jpg 917w,
+        img/montagne_des_singes4_uyov8d_c_scale,w_1000.jpg 1000w"
+        src="img/montagne_des_singes4_uyov8d_c_scale,w_1000.jpg"
+        alt="">
         </div>
         <div class="swiper-slide">
-          <img src="img/montagnes_des_singes2.jpg" alt="">
+          <img
+          sizes="(max-width: 1000px) 100vw, 1000px"
+          srcset="
+          img/montagnes_des_singes2_tk1a2b_c_scale,w_200.jpg 200w,
+          img/montagnes_des_singes2_tk1a2b_c_scale,w_401.jpg 401w,
+          img/montagnes_des_singes2_tk1a2b_c_scale,w_544.jpg 544w,
+          img/montagnes_des_singes2_tk1a2b_c_scale,w_696.jpg 696w,
+          img/montagnes_des_singes2_tk1a2b_c_scale,w_819.jpg 819w,
+          img/montagnes_des_singes2_tk1a2b_c_scale,w_933.jpg 933w,
+          img/montagnes_des_singes2_tk1a2b_c_scale,w_1000.jpg 1000w"
+          src="img/montagnes_des_singes2_tk1a2b_c_scale,w_1000.jpg"
+          alt="">
         </div>
         <div class="swiper-slide">
-          <img src="img/montagne_des_singes1.jpg" alt="">
+          <img
+          sizes="(max-width: 1000px) 100vw, 1000px"
+          srcset="
+          img/montagne_des_singes1_vj2lvi_c_scale,w_200.jpg 200w,
+          img/montagne_des_singes1_vj2lvi_c_scale,w_512.jpg 512w,
+          img/montagne_des_singes1_vj2lvi_c_scale,w_737.jpg 737w,
+          img/montagne_des_singes1_vj2lvi_c_scale img/,w_920.jpg 920w,
+          img/montagne_des_singes1_vj2lvi_c_scale,w_1000.jpg 1000w"
+          src=" img/montagne_des_singes1_vj2lvi_c_scale,w_1000.jpg"
+          alt="">
         </div>
       </div>
       <!-- Add Pagination -->
@@ -500,13 +533,47 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="img/animationsinges1.jpg" alt="">
+          <img
+          sizes="(max-width: 1000px) 100vw, 1000px"
+          srcset="
+          img/animationsinges1_qkdcaw_c_scale,w_200.jpg 200w,
+          img/animationsinges1_qkdcaw_c_scale,w_455.jpg 455w,
+          img/animationsinges1_qkdcaw_c_scale,w_631.jpg 631w,
+          img/animationsinges1_qkdcaw_c_scale,w_784.jpg 784w,
+          img/animationsinges1_qkdcaw_c_scale,w_938.jpg 938w,
+          img/animationsinges1_qkdcaw_c_scale,w_1000.jpg 1000w"
+          src="img/animationsinges1_qkdcaw_c_scale,w_1000.jpg"
+          alt="">
         </div>
         <div class="swiper-slide">
-          <img src="img/animationsinges2.jpg" alt="">
+          <img
+          sizes="(max-width: 1000px) 100vw, 1000px"
+          srcset="
+          img/animationsinges2_blbso7_c_scale,w_200.jpg 200w,
+          img/animationsinges2_blbso7_c_scale,w_381.jpg 381w,
+          img/animationsinges2_blbso7_c_scale,w_572.jpg 572w,
+          img/animationsinges2_blbso7_c_scale,w_697.jpg 697w,
+          img/animationsinges2_blbso7_c_scale,w_831.jpg 831w,
+          img/animationsinges2_blbso7_c_scale,w_944.jpg 944w,
+          img/animationsinges2_blbso7_c_scale,w_1000.jpg 1000w"
+          src="img/animationsinges2_blbso7_c_scale,w_1000.jpg"
+          alt="">
         </div>
         <div class="swiper-slide">
-          <img src="img/animationsinges3.jpg" alt="">
+          <img
+          sizes="(max-width: 1000px) 100vw, 1000px"
+          srcset="
+          img/animationsinges3_f5bq3h_c_scale,w_200.jpg 200w,
+          img/animationsinges3_f5bq3h_c_scale,w_361.jpg 361w,
+          img/animationsinges3_f5bq3h_c_scale,w_478.jpg 478w,
+          img/animationsinges3_f5bq3h_c_scale,w_565.jpg 565w,
+          img/animationsinges3_f5bq3h_c_scale,w_705.jpg 705w,
+          img/animationsinges3_f5bq3h_c_scale,w_798.jpg 798w,
+          img/animationsinges3_f5bq3h_c_scale,w_893.jpg 893w,
+          img/animationsinges3_f5bq3h_c_scale,w_975.jpg 975w,
+          img/animationsinges3_f5bq3h_c_scale,w_1000.jpg 1000w"
+          src="img/animationsinges3_f5bq3h_c_scale,w_1000.jpg"
+          alt="">
         </div>
       </div>
       <!-- Add Pagination -->
@@ -592,14 +659,13 @@
   <footer>
     <div class="footercontact">
       <div class="reseaux">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+        <a href="https://twitter.com/hoplaTravel" target="_blank"><img src="svg/twitter.svg" alt=""></a>
+        <a href="https://www.instagram.com/hopla.travel/"target="_blank"><img src="svg/instagram.svg" alt=""><a>
       </div>
       <div class="footertexte">
         hopla@gmail.com <br>
         61 Rue Albert Camus,<br> 68200 Mulhouse - (<a class="googlemap"
-          href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
-          Map</a>)
+        href="https://goo.gl/maps/TSnRVutd2NRsDCDg9" target="_blank"> GoogleMap </a>)
       </div>
     </div>
     <div class="footer2">

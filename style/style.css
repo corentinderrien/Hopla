@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
   }
 
+ 
 /****************************/
 /****************************/
 /*       Code Mobile        */
@@ -29,7 +30,7 @@ body {
   transition: 1s;
   justify-content: space-between;
   align-items: center;
-  background: rgb(0, 0, 0)
+  background: #5da066;
 }
 
 .menutel{
@@ -57,7 +58,7 @@ body {
   margin-top: 50px;
 }
 
-nav>img{
+nav a img{
   display: none;
 }
 
@@ -146,7 +147,7 @@ section {
 }
 
 .fristcontent{
-  background: url(../img/Accueil02.jpg);
+  background: url(../img/illustration_lieux_insoliteV4_decoupe2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   padding: 50px;
@@ -154,16 +155,16 @@ section {
   justify-content: center;
   text-align: center;
   padding-top: 150px;
-
   }
   
     .decouverte{
       font-size: 10px;
-      color: white;
+      color: #1F251C;
       text-align: center;
       font-size: 2em;
       font-weight: bold;
       transition: 1s;
+      margin-bottom: 40px;
     }
     .decouverte2{
       transform: translateY(20px);
@@ -174,14 +175,12 @@ section {
       transition: 3s;
       padding: 5px;
       margin-top: 10px;
+      border-radius: 10px;
+      background: linear-gradient(#5da066 50%, transparent);
     }
     .txtaccueil p{
       padding: 5px;
       border-radius: 4px;
-      background: linear-gradient(black 50%, transparent);
-    }
-    .fristcontent:hover .decouverte{
-      filter: drop-shadow(16px 16px 20px black);
     }
     .fristcontent .txtaccueil a:hover{
       filter: initial;
@@ -190,7 +189,7 @@ section {
     .txtaccueil a{
       text-align: center;
       text-decoration: none;
-      color: yellowgreen;
+      color: rgb(66, 19, 0);
       font-size: 1.5em;
       filter: grayscale(0);
       transition: 0.5s;
@@ -261,7 +260,6 @@ section {
   }
 
   section .screen .content {
-    text-decoration: none;
     position: absolute;
     width: 300px;
     height: auto;
@@ -272,8 +270,9 @@ section {
     transform: translateX(100%);
     transition: 0.5s;
     text-align: justify;
-    color: black;
+    text-decoration: none;
   }
+
   section .screen .content:hover{
       cursor: pointer;
   }
@@ -286,6 +285,11 @@ section {
     letter-spacing: 1px;
     color: lightsalmon;
   }
+
+  section .screen .content p{
+    color: black;
+  }
+
   section .screen .content h2{
     margin: 0;
     padding: 0;
@@ -312,9 +316,6 @@ section {
     padding: 40px 60px;
     overflow: hidden;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   .parallax-bg {
@@ -331,6 +332,8 @@ section {
   .swiper-slide img{
     height: auto;
     width: 70%;
+    position: absolute;
+    top: 65%;
   }
   .swiper-slide .title {
     font-size: 41px;
@@ -352,7 +355,7 @@ section {
 /****************************/
   .contact{
     position: relative;
-    background-color: yellowgreen;
+    background-color: #5da066;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -408,7 +411,7 @@ section {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 30%;
+    height: 40%;
     z-index: 1;
     pointer-events:fill;
     transition: 500ms ease-in-out;
@@ -520,7 +523,7 @@ section {
 
   footer{
     transition: 500ms ease-in-out;
-} 
+ } 
 
 .footercontact{
     height: 150px;
@@ -529,7 +532,7 @@ section {
     justify-content: center;
     flex-direction: row-reverse;
     color: white;
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(147, 163, 88);
     padding: 10px;
     padding-right: 50px;
 }
@@ -545,14 +548,15 @@ section {
     width: 35px;
 }
 
-.footertext{
-    font-size: 30px;
+.footertexte{
+    display: block;
+    font-size: 1em;
     margin: 10px;
     text-align: center;
 }
 
 .footer2{
-    background-color: black;
+    background-color: rgb(12, 44, 23);
     color: yellowgreen;
     font-size: small;
     display: flex;
@@ -590,10 +594,33 @@ footer:hover{
 
 @media screen and (min-width: 1200px) {
 
+ /*souris*/
+ .cursor{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 10000;
+}
+.cursor .circle {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  border-radius: 50%;
+  filter: blur(10px);
+  pointer-events: none;
+}
+.cursor .circle:focus {
+filter: blur(0);
+}
+
   /****************************/
   /*    Code du Header        */
   /****************************/
-  nav>img{
+  
+  nav a img{
     display: initial;
   }
   
@@ -616,22 +643,31 @@ footer:hover{
     transition: 1s;
     justify-content: space-between;
     align-items: center;
-    background: rgb(0, 0, 0)
+    background:  #5da066;
+    transition: 1s;
     
   }
   .navbar img{
     width: 200px;
     height: auto;
     margin-left: 50px;
+    transition: 1s;
   }
 
   .navbar-menu{
     margin-right: 50px;
   }
   .navbar2{
-    background: white;
+    background: #c8ad7f;
     padding: 0;
+    transition: 1s;
   }
+  
+  .navbar2 img{
+    transform: scale(0.8);
+    transition: 1s;
+  }
+
   .nav-link{
     margin-right: 5px;
     text-decoration: none;
@@ -642,7 +678,7 @@ footer:hover{
   }
   .nav-link:hover,
   .nav-link:focus{
-    color: yellowgreen;
+  color: #fceea9;
   }
   .nav-link2{
     color: black;
@@ -664,7 +700,7 @@ footer:hover{
   }
 
   .fristcontent{
-  background: url(../img/Accueil02.jpg);
+  background: url(../img/illustration_lieux_insoliteV4_decoupe2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -673,9 +709,13 @@ footer:hover{
   padding: 50px;
   display: flex;
   align-items: center;
+  background-size: cover;
   transition: 2s;
   padding-top: 0px;
+  overflow-y: hidden;
+  cursor: default;
   }
+
   .fristcontent2{
     transform: translate(0px, 70px);
   }
@@ -696,7 +736,7 @@ footer:hover{
     top: 30%;
     width: 40%;
     font-size: 20px;
-    color: white;
+    color: #1F251C;
     text-align: center;
     font-size: 4em;
     font-weight: bold;
@@ -707,47 +747,117 @@ footer:hover{
     opacity: 0;
   }
   .txtaccueil{
-    position: absolute;
-    right: 10%;
-    top: 30%;
+    position: relative;
     display: block;
     justify-content: right;
     text-align:center;
-    color: white;
+    color: black;
     transition: 3s;
-    padding: 20px;
     width: 50%;
-    margin-top: 10px;
+    background: none;
   }
   .txtaccueil p{
-    padding: 5px;
     border-radius: 4px;
-    background: linear-gradient(black 30%, transparent);
-    width: 70%;
-    margin-left: 30%;
+    color: black;
+    transition: 400ms;
   }
   .fristcontent:hover .decouverte{
-    filter: drop-shadow(16px 16px 20px black);
+    filter: drop-shadow(16px 16px 20px #28512D);
   }
   .fristcontent .txtaccueil a:hover{
     filter: initial;
     letter-spacing: 1px;
   }
   .txtaccueil a{
-    text-align: right;
+    text-align: center;
     text-decoration: none;
-    color: yellowgreen;
-    font-size: 1.5em;
+    color: rgb(66, 19, 0);
+    font-size: 1.2em;
     filter: grayscale(0);
-    margin-left: 30%;
     transition: 0.5s;
   }
   .txtaccueil2{
     transform: translateY(20px);
     opacity: 0;
   }
+  .square:hover .txtaccueil p {
+    color: white;
+  }
 
+  .square{
+    position: absolute;
+    top: 20%;
+    right: 6vw;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+.square span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    border: 2px solid #5da066;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate 4s linear infinite;
+}
+.square:hover span:nth-child(1) {
+   border: none;
+   background: #5da066;
+}
 
+.square span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #55925d ;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate 6s linear infinite;
+}
+.square:hover span:nth-child(2) {
+   border: none;
+   background: #55925d;
+}
+
+.square span:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    border: 2px solid #28512D;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+    transition: 0.5s;
+    animation: animate2 8s linear infinite;
+}
+.square:hover span:nth-child(3) {
+   border: none;
+   background: #4f8857;
+}
+@keyframes animate {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+@keyframes animate2 {
+    0%{transform: rotate(360deg);}
+    100%{transform: rotate(0deg);}
+}
+
+.txtaccueil{
+    position: relative;
+    color: #fff;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 1000;
+}
 
   /****************************/
   /*       Code Lieux         */
@@ -775,18 +885,6 @@ footer:hover{
     padding: 100px;
   }
  
-  .swiper-slide {
-    font-size: 18px;
-    color: #fff;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 40px 60px;
-    overflow: hidden;
-    align-items: center;
-    display: initial;
-    flex-direction: initial;
-  }
-
   .swiper-slide img{
     position: absolute;
     top: 30%;
@@ -820,10 +918,16 @@ footer:hover{
     padding-left: 70px;
   }
 
+
   .reseaux a img{
       margin-left: 20px;
       margin-right: 20px;
   }
+
+  .reseaux a img:hover{
+    transform: scale(1.5); 
+}
+
 
   .footertext{
       margin: 10px;

@@ -24,7 +24,7 @@
     background-image: linear-gradient(132deg, #72b9af 0%, #5da066 100%);
   }
 
-  .swiper-container{
+  .swiper-container {
     height: 50vh;
   }
 
@@ -56,6 +56,7 @@
     margin-bottom: 6%;
   }
 
+
   .titre {
     font-size: 3em;
     line-height: 1.1em;
@@ -68,7 +69,7 @@
 
   .text1 {
     text-transform: uppercase;
-    font-size: 55px;
+    font-size: 28px;
     letter-spacing: 8px;
     color: #262220;
     position: relative;
@@ -84,13 +85,14 @@
     animation: text2 3s 1;
   }
 
+
   @keyframes text {
     0% {
       margin-bottom: -15px;
     }
 
     30% {
-      letter-spacing: 25px;
+      letter-spacing: 15px;
       margin-bottom: -15px;
     }
 
@@ -396,11 +398,13 @@
   <nav class="navbar" id="navbar">
     <button id="hamburger-button" onclick="menu()">&#9776;</button>
 
-    <img src="svg/Fichier1.svg" width="100%" height="100px">
+    <a href="index.html">
+      <img src="svg/Fichier1.svg" width="100%" height="100px">
+    </a>
     <div class="navbar-menu">
       <a class="nav-link" href="index.html">Accueil</a>
       <a class="nav-link" href="index.html #lieux">Lieux</a>
-      <a class="nav-link" href="index.html #event">Evenement</a>
+      <a class="nav-link" href="index.html #event">Evenements</a>
       <a class="nav-link" href="index.html #contact">Contact</a>
     </div>
   </nav>
@@ -410,7 +414,7 @@
       <img class="logo" src="svg/Fichier2.svg" width="100%" height="100px">
       <li> <a class="underline" onclick="menu()" href="index.html">Accueil</a> </li>
       <li> <a class="underline" onclick="menu()" href="index.html #lieux">Lieux</a> </li>
-      <li> <a class="underline" onclick="menu()" href="index.html #event">Evenement</a> </li>
+      <li> <a class="underline" onclick="menu()" href="index.html #event">Evenements</a> </li>
       <li> <a class="underline" onclick="menu()" href="index.html #contact">Contact</a> </li>
     </ul>
   </div>
@@ -449,13 +453,43 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="img/ecomusee4.jpg" alt="">
+          <img
+          sizes="(max-width: 1000px) 100vw, 1000px"
+          srcset="
+          img/ecomusee4_nh0yrs_c_scale,w_300.jpg 300w,
+          img/ecomusee4_nh0yrs_c_scale,w_483.jpg 483w,
+          img/ecomusee4_nh0yrs_c_scale,w_643.jpg 643w,
+          img/ecomusee4_nh0yrs_c_scale,w_772.jpg 772w,
+          img/ecomusee4_nh0yrs_c_scale,w_898.jpg 898w,
+          img/ecomusee4_nh0yrs_c_scale,w_1000.jpg 1000w"
+          src="img/ecomusee4_nh0yrs_c_scale,w_1000.jpg"
+          alt="">
         </div>
+
         <div class="swiper-slide">
-          <img src="img/ecomusee3.jpg" alt="">
+            <img sizes="(max-width: 1000px) 100vw, 1000px" srcset="
+            img/ecomusee3_f59twa_c_scale,w_300.jpg 300w,
+            img/ecomusee3_f59twa_c_scale,w_456.jpg 456w,
+            img/ecomusee3_f59twa_c_scale,w_623.jpg 623w,
+            img/ecomusee3_f59twa_c_scale,w_715.jpg 715w,
+            img/ecomusee3_f59twa_c_scale,w_895.jpg 895w,
+            img/ecomusee3_f59twa_c_scale,w_913.jpg 913w,
+            img/ecomusee3_f59twa_c_scale,w_1000.jpg 1000w" src="img/ecomusee3_f59twa_c_scale,w_1000.jpg" alt="">
         </div>
+
         <div class="swiper-slide">
-          <img src="img/ecomusee1.jpg" alt="">
+            <img sizes="(max-width: 1000px) 100vw, 1000px" srcset="
+            img/ecomusee1_jqewfo_c_scale,w_200.jpg 200w,
+            img/ecomusee1_jqewfo_c_scale,w_327.jpg 327w,
+            img/ecomusee1_jqewfo_c_scale,w_426.jpg 426w,
+            img/ecomusee1_jqewfo_c_scale,w_514.jpg 514w,
+            img/ecomusee1_jqewfo_c_scale,w_584.jpg 584w,
+            img/ecomusee1_jqewfo_c_scale,w_660.jpg 660w,
+            img/ecomusee1_jqewfo_c_scale,w_803.jpg 803w,
+            img/ecomusee1_jqewfo_c_scale,w_902.jpg 902w,
+            img/ecomusee1_jqewfo_c_scale,w_948.jpg 948w,
+            img/ecomusee1_jqewfo_c_scale,w_995.jpg 995w,
+            img/ecomusee1_jqewfo_c_scale,w_1000.jpg 1000w" src=" img/ecomusee1_jqewfo_c_scale,w_1000.jpg" alt="">
         </div>
       </div>
       <!-- Add Pagination -->
@@ -507,13 +541,47 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="img/animation1.jpg" alt="">
+          <img sizes="(max-width: 1000px) 100vw, 1000px" srcset="
+          img/animation1_xlilas_c_scale,w_200.jpg 200w,
+          img/animation1_xlilas_c_scale,w_383.jpg 383w,
+          img/animation1_xlilas_c_scale,w_527.jpg 527w,
+          img/animation1_xlilas_c_scale,w_654.jpg 654w,
+          img/animation1_xlilas_c_scale,w_763.jpg 763w,
+          img/animation1_xlilas_c_scale,w_870.jpg 870w,
+          img/animation1_xlilas_c_scale,w_990.jpg 990w,
+          img/animation1_xlilas_c_scale,w_1000.jpg 1000w" 
+          src="img/animation1_xlilas_c_scale,w_1000.jpg" alt="">
+        </div>
+
+        <div class="swiper-slide">
+         <picture>
+        <img
+        sizes="(max-width: 1000px) 100vw, 1000px"
+        srcset="
+        img/animation2_tai21y_c_scale,w_200.jpg 200w,
+        img/animation2_tai21y_c_scale,w_502.jpg 502w,
+        img/animation2_tai21y_c_scale,w_718.jpg 718w,
+        img/animation2_tai21y_c_scale,w_902.jpg 902w,
+        img/animation2_tai21y_c_scale,w_1000.jpg 1000w"
+        src="img/animation2_tai21y_c_scale,w_1000.jpg"
+        alt="">
+        </picture>
         </div>
         <div class="swiper-slide">
-          <img src="img/animation2.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="img/animation3.jpg" alt="">
+          <picture>
+            <img
+            sizes="(max-width: 1000px) 100vw, 1000px"
+            srcset="
+            img/animation3_w7lxif_c_scale,w_200.jpg 200w,
+            img/animation3_w7lxif_c_scale,w_370.jpg 370w,
+            img/animation3_w7lxif_c_scale,w_626.jpg 626w,
+            img/animation3_w7lxif_c_scale,w_795.jpg 795w,
+            img/animation3_w7lxif_c_scale,w_931.jpg 931w,
+            img/animation3_w7lxif_c_scale,w_983.jpg 983w,
+            img/animation3_w7lxif_c_scale,w_1000.jpg 1000w"
+            src="img/animation3_w7lxif_c_scale,w_1000.jpg"
+            alt="">
+            </picture>
         </div>
       </div>
       <!-- Add Pagination -->
@@ -595,13 +663,13 @@
   <footer>
     <div class="footercontact">
       <div class="reseaux">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/twitter.svg" alt=""></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="svg/instagram.svg" alt=""><a>
+        <a href="https://twitter.com/hoplaTravel" target="_blank"><img src="svg/twitter.svg" alt=""></a>
+        <a href="https://www.instagram.com/hopla.travel/"target="_blank"><img src="svg/instagram.svg" alt=""><a>
       </div>
       <div class="footertexte">
         hopla@gmail.com <br>
         61 Rue Albert Camus,<br> 68200 Mulhouse - (<a class="googlemap"
-          href="https://goo.gl/maps/TSnRVutd2NRsDCDg9">Google
+          href="https://goo.gl/maps/TSnRVutd2NRsDCDg9" target="_blank">Google
           Map</a>)
       </div>
     </div>
