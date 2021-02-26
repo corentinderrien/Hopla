@@ -58,7 +58,7 @@ body {
   margin-top: 50px;
 }
 
-nav a img{
+nav>a>img{
   display: none;
 }
 
@@ -68,7 +68,7 @@ nav>div{
 
 .ouvert {
   transform: translate(0);
-  background: gray;
+  background: #5da066;
 }
 
 #hamburger,

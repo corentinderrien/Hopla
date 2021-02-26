@@ -69,7 +69,7 @@ nav>div{
 
 .ouvert {
   transform: translate(0);
-  background: gray;
+  background: #5da066;
 }
 
 #hamburger,
